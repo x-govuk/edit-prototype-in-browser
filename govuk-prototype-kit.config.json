@@ -1,0 +1,8 @@
+{
+  "sass": [
+    "/assets/editor.scss"
+  ],
+  "scripts": [
+    "/assets/editor.js"
+  ]
+}
