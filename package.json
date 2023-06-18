@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/x-govuk/edit-prototype-in-browser#readme",
   "dependencies": {
+    "fs-extra": "^11.1.1",
     "govuk-prototype-kit": "^13.8.2-rc.0",
+    "monaco-editor": "^0.39.0",
     "standard": "^17.1.0"
   }
 }
