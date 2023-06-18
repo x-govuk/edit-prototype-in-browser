@@ -57,3 +57,29 @@ body:has(.x-govuk-epib__bar) {
   float: right;
 }
 
+.x-govuk-epib__filename {
+  font-family: sans-serif;
+}
+
+.x-govuk-epib__toast-message {
+  display: none;
+
+  padding: .4rem 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  font-family: sans-serif;
+}
+
+.x-govuk-epib__toast-message--show {
+  display: block;
+}
+
+.x-govuk-epib__toast-message--success {
+  border: 1px solid greenyellow;
+}
+
+.x-govuk-epib__toast-message--failure {
+  border: 1px solid orangered;
+}
+
