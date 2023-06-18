@@ -59,8 +59,11 @@
         return setupMenu.result
       }
       const $bar = addChild(document.body, 'section', ['x-govuk-epib__bar'])
+      const $toastMessage = addChild($bar, 'div', ['x-govuk-epib__toast-message'])
       const $menu = addChild($bar, 'nav', ['x-govuk-epib__bar--menu'])
       const $editor = addChild($bar, 'div', ['x-govuk-epib__editor', 'x-govuk-epib--hidden'])
+      const $filenameBar = addChild($editor, 'div', ['x-govuk-epib__filename__bar'])
+      const $filename = addChild($filenameBar, 'div', ['x-govuk-epib__filename'])
       const $codeWrapper = addChild($editor, 'div', ['x-govuk-epib__editor__codewrapper'])
       const $saveButton = addChild($editor, 'button', ['x-govuk-epib__editor__save-button'])
       const $cancelButton = addChild($editor, 'button', ['x-govuk-epib__editor__cancel-button'])
@@ -81,7 +84,7 @@
         $menu.classList.add('x-govuk-epib--hidden')
       }
 
-      setupMenu.result = { $menu, $editor, $codeWrapper, $saveButton, $deleteButton, enterMenuMode, enterCodeMode }
+      setupMenu.result = { $menu, $editor, $codeWrapper, $saveButton, $deleteButton, enterMenuMode, enterCodeMode, $filename }
 
       $saveButton.addEventListener('click', (e) => {
         e.preventDefault()
@@ -110,7 +113,7 @@
               window.location.reload()
             })
             .catch(() => {
-              window.alert('Delete failed.')
+              ('Delete failed.')
 
               setupMenu.result.enableEverything()
             })
@@ -145,19 +148,38 @@
         httpPost(url, jsonBody)
           .then(() => {
             enterMenuMode()
+            setupMenu.result.showToastMessage(`Successfully saved ${savePath}`, 'SUCCESS')
           })
           .catch(() => {
-            window.alert('Save failed.')
+            setupMenu.result.showToastMessage('Save failed.', 'FAILURE')
 
             setupMenu.result.enableEverything()
           })
+      }
+
+      const toastTypeToClass = {
+        SUCCESS: 'x-govuk-epib__toast-message--success',
+        FAILURE: 'x-govuk-epib__toast-message--failure'
+      }
+
+      setupMenu.result.showToastMessage = (message, type) => {
+        $toastMessage.innerText = message
+        const classesToAddAndRemove = ['x-govuk-epib__toast-message--show']
+        if (toastTypeToClass[type]) {
+          classesToAddAndRemove.push(toastTypeToClass[type])
+        }
+        classesToAddAndRemove.forEach(c => $toastMessage.classList.add(c))
+
+        window.setTimeout(() => {
+          classesToAddAndRemove.forEach(c => $toastMessage.classList.remove(c))
+        }, 4000)
       }
 
       return setupMenu.result
     }
 
     function showEditButton (fileConfig) {
-      const { $menu, $codeWrapper, $saveButton, $deleteButton, enableEverything, enterCodeMode, save } = setupMenu()
+      const { $menu, $codeWrapper, $saveButton, $deleteButton, enableEverything, enterCodeMode, save, $filename, showToastMessage } = setupMenu()
 
       const $editButton = addChild($menu, 'a', ['x-govuk-epib__bar--menu--item'])
 
@@ -183,6 +205,7 @@
                     save()
                   }
                 })
+                $filename.innerHTML = fileConfig.path
                 currentEditor = window.monaco.editor.create($code, {
                   value: contents,
                   language: getType(fileConfig.type).language
@@ -195,7 +218,7 @@
             }
           })
           .catch(e => {
-            window.alert('Failed to load file contents ' + fileConfig.path)
+            showToastMessage('Failed to load file contents ' + fileConfig.path, 'FAILURE')
             console.error(e)
           })
       })
