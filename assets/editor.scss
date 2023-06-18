@@ -46,6 +46,8 @@ body:has(.x-govuk-epib__bar) {
 
 .x-govuk-epib__editor button {
   font-size: 1rem;
+  border-radius: 0;
+  padding: .3rem 1rem;
 }
 .x-govuk-epib__editor button + button {
   margin-left: 1rem;
