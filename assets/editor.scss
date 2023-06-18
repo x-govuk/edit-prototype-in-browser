@@ -1,3 +1,57 @@
-body {
-  background: red !important;
+body:has(.x-govuk-epib__bar) {
+  padding-bottom: 3rem;
 }
+
+.x-govuk-epib__bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 1rem;
+  background: #333;
+  border-top: 2px solid #999;
+
+  color: white;
+}
+
+.x-govuk-epib__bar--menu {
+}
+
+.x-govuk-epib__bar--menu--item,
+.x-govuk-epib__bar--menu--item:link,
+.x-govuk-epib__bar--menu--item:visited {
+  color: inherit;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.x-govuk-epib__bar--menu--item:visited:focus {
+  background: #ffdd00;
+  color: black;
+}
+
+.x-govuk-epib--hidden {
+  display: none;
+}
+
+.x-govuk-epib__editor__code {
+  display: block;
+  min-height: 10rem;
+  height: 40vh;
+  margin: 1rem 0;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.x-govuk-epib__editor button {
+  font-size: 1rem;
+}
+.x-govuk-epib__editor button + button {
+  margin-left: 1rem;
+}
+
+.x-govuk-epib__editor__delete-button {
+  float: right;
+}
+
