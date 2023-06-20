@@ -1,4 +1,21 @@
 (() => {
+  window.XGOVUK = window.XGOVUK || {}
+  window.XGOVUK.editPrototypeInBrowser = window.XGOVUK.editPrototypeInBrowser || {}
+
+  if (window.XGOVUK.editPrototypeInBrowser.doNotEditThisPage) {
+    return
+  }
+
+  if (!window.XGOVUK.editPrototypeInBrowser.allowedDomains) {
+    window.XGOVUK.editPrototypeInBrowser.allowedDomains = [
+      'localhost'
+    ]
+  }
+
+  if (!window.XGOVUK.editPrototypeInBrowser.allowedDomains.includes(window.location.hostname)) {
+    return
+  }
+
   const routesContext = '/plugin-routers/x-govuk/edit-prototype-in-browser'
 
   const $monacoLoader = document.createElement('script')
