@@ -28,6 +28,31 @@ Phase: Beta
 
 This is a beta product, we know that improvements need making and we'd like your feedback.
 
+Configuration
+---
+
+If you want to have the editor on some pages but not others you can turn the editor off for by adding this near the top of your page:
+
+```html
+<script>
+  window.XGOVUK = window.XGOVUK || {}
+  window.XGOVUK.editPrototypeInBrowser = window.XGOVUK.editPrototypeInBrowser || {}
+
+  window.XGOVUK.editPrototypeInBrowser.doNotEditThisPage = true
+</script>
+```
+
+Currently the editor shows when you're running on localhost but not on other domains, if you want it to work on different domains you can add them like this: 
+
+```html
+<script>
+  window.XGOVUK = window.XGOVUK || {}
+  window.XGOVUK.editPrototypeInBrowser = window.XGOVUK.editPrototypeInBrowser || {}
+
+  window.XGOVUK.editPrototypeInBrowser.allowedDomains = ['example.com', 'another-domain.net']
+</script>
+```
+
 Issues and feedback
 ---
 
