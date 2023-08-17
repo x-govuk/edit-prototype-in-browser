@@ -1,6 +1,6 @@
 {
   "name": "@x-govuk/edit-prototype-in-browser",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An in-browser editor for the govuk-prototype-kit",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/x-govuk/edit-prototype-in-browser#readme",
   "dependencies": {
     "fs-extra": "^11.1.1",
-    "govuk-prototype-kit": "^13.8.2-rc.0",
+    "govuk-prototype-kit": "^13.12.1",
     "monaco-editor": "^0.39.0",
     "standard": "^17.1.0"
   }
