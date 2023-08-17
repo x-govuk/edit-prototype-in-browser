@@ -1,3 +1,9 @@
+## 0.2.1
+
+### Fixes
+
+- Added metadata to be shown on kit's plugin page
+
 ## 0.2.0
 
 ### New features
