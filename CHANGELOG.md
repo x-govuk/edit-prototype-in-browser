@@ -1,3 +1,9 @@
+## 0.3.0
+
+### New features
+
+- The setup line is no longer needed, just install and it'll work
+
 ## 0.2.1
 
 ### Fixes

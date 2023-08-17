@@ -4,7 +4,8 @@
   "description": "An in-browser editor for the govuk-prototype-kit",
   "main": "index.js",
   "scripts": {
-    "test": "govuk-prototype-kit validate-plugin && standard"
+    "test": "govuk-prototype-kit validate-plugin && standard",
+    "lint:fix": "standard --fix"
   },
   "repository": {
     "type": "git",
