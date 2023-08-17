@@ -1,8 +1,8 @@
 {
   "meta": {
-    "description": "An in-browser editor for the prototype kit, it needs one line of setup which can be found in the documentation and then you can edit pages without leaving the browser.",
+    "description": "An in-browser editor for the prototype kit, it allows you to edit pages without leaving the browser.",
     "urls": {
-      "documentation": "https://www.npmjs.com/package/@x-govuk/edit-prototype-in-browser/v/{{version}}#user-content-setup",
+      "documentation": "https://www.npmjs.com/package/@x-govuk/edit-prototype-in-browser/v/{{version}}#readme",
       "versionHistory": "https://github.com/x-govuk/edit-prototype-in-browser/blob/main/CHANGELOG.md"
     }
   },
@@ -11,5 +11,8 @@
   ],
   "scripts": [
     "/assets/editor.js"
+  ],
+  "nunjucksFilters": [
+    "/routes.js"
   ]
 }
