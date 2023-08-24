@@ -1,6 +1,7 @@
 const fsp = require('fs/promises')
-const fse = require('fs-extra')
 const path = require('path')
+const fse = require('fs-extra')
+const bodyParser = require('body-parser')
 
 const projectDir = process.cwd()
 const packageDir = __dirname
@@ -8,6 +9,8 @@ const contextPath = '/plugin-routers/x-govuk/edit-prototype-in-browser'
 
 const routesApi = require('govuk-prototype-kit').requests
 const editorRouter = routesApi.setupRouter(contextPath)
+
+editorRouter.use(bodyParser.json())
 
 editorRouter.get('/', (req, res) => {
   res.send({})
