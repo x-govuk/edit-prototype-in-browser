@@ -1,3 +1,9 @@
+## 0.3.1
+
+### Fixes
+
+- Fixing a bug that occurred while saving
+
 ## 0.3.0
 
 ### New features
