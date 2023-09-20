@@ -94,6 +94,8 @@ editorRouter.get('/files-behind-url', async (req, res) => {
     await addIfFileExistsAndCanBeEdited(files, 'javascript', 'app/assets/javascripts/application.js', 'JS')
     await addIfFileExistsAndCanBeEdited(files, 'scss', 'app/assets/sass/application.scss', 'SCSS')
     await addIfFileExistsAndCanBeEdited(files, 'scss settings', 'app/assets/sass/settings.scss', 'SCSS')
+    await addIfFileExistsAndCanBeEdited(files, 'routes', 'app/routes.js', 'JS')
+    await addIfFileExistsAndCanBeEdited(files, 'filters', 'app/filters.js', 'JS')
 
     res.send({
       success: true,
