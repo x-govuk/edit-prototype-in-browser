@@ -21,9 +21,14 @@ body:has(.x-govuk-epib__bar) {
 .x-govuk-epib__bar--menu--item,
 .x-govuk-epib__bar--menu--item:link,
 .x-govuk-epib__bar--menu--item:visited {
-  color: inherit;
+  font-weight: normal;
   padding: 1rem;
   text-decoration: none;
+  color: white !important;
+  border-right: 1px solid white;
+  &:first-child {
+    border-left: 1px solid white;
+  }
 }
 
 .x-govuk-epib__bar--menu--item:visited:focus {

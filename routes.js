@@ -12,6 +12,8 @@ const editorRouter = routesApi.setupRouter(contextPath)
 
 editorRouter.use(bodyParser.json())
 
+console.log('inserted routes.')
+
 editorRouter.get('/', (req, res) => {
   res.send({})
 })

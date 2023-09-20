@@ -1,3 +1,9 @@
+## 0.3.2
+
+### Fixes
+
+- Making styles more reliable when other plugins are installed
+
 ## 0.3.1
 
 ### Fixes
