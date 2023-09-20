@@ -1,3 +1,9 @@
+## 0.4.0
+
+### New features
+
+- Adding more files to the edit list
+
 ## 0.3.1
 
 ### Fixes
