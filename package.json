@@ -1,6 +1,6 @@
 {
   "name": "@x-govuk/edit-prototype-in-browser",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "An in-browser editor for the govuk-prototype-kit",
   "main": "index.js",
   "scripts": {
